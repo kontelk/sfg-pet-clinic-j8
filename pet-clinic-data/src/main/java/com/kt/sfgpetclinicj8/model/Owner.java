@@ -5,6 +5,5 @@ package com.kt.sfgpetclinicj8.model;
  */
 public class Owner extends Person {
 
-    public Owner() {
-    }
+
 }
