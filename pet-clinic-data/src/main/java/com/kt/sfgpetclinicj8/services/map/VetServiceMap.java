@@ -1,15 +1,16 @@
 package com.kt.sfgpetclinicj8.services.map;
 
 import com.kt.sfgpetclinicj8.model.Vet;
-import com.kt.sfgpetclinicj8.services.CrudService;
+import com.kt.sfgpetclinicj8.services.VetService;
 
 import java.util.Set;
 
 /**
  * Created by kontelk on 8/19/23.
  */
-public class VetServiceMap extends AbstractMapService<Vet, Long>
-        implements CrudService<Vet, Long> {
+public class VetServiceMap
+        extends AbstractMapService<Vet, Long>
+        implements VetService {
 
     @Override
     public Set<Vet> findAll() {
