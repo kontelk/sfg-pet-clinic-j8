@@ -2,12 +2,14 @@ package com.kt.sfgpetclinicj8.services.map;
 
 import com.kt.sfgpetclinicj8.model.Vet;
 import com.kt.sfgpetclinicj8.services.VetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 /**
  * Created by kontelk on 8/19/23.
  */
+@Service
 public class VetServiceMap
         extends AbstractMapService<Vet, Long>
         implements VetService {
