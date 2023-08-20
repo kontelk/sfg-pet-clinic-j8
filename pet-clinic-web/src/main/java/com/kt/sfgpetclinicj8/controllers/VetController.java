@@ -1,6 +1,8 @@
 package com.kt.sfgpetclinicj8.controllers;
 
+import com.kt.sfgpetclinicj8.services.VetService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -10,8 +12,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class VetController {
 
+    private final VetService vetService;
+
+    //@Autowired
+    public VetController(VetService vetService) {
+        this.vetService = vetService;
+    }
+
     @RequestMapping({"/list"})
-    public String listVets() {
+    public String listVets(Model model) {
+        model.addAttribute("vets",
+                vetService.findAll());
         return "vets/list";
     }
 }
