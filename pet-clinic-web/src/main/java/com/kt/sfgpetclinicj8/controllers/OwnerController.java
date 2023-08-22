@@ -18,11 +18,11 @@ public class OwnerController {
         this.ownerService = ownerService;
     }
 
-    @RequestMapping({"/list"})
+    @RequestMapping({"/ownersList"})
     public String listOwners(Model model) {
 
         model.addAttribute("owners",
                 ownerService.findAll());
-        return "owners/list";
+        return "owners/ownersList";
     }
 }
