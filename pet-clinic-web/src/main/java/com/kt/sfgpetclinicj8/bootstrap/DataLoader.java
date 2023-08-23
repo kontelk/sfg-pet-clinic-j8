@@ -1,8 +1,10 @@
 package com.kt.sfgpetclinicj8.bootstrap;
 
 import com.kt.sfgpetclinicj8.model.Owner;
+import com.kt.sfgpetclinicj8.model.PetType;
 import com.kt.sfgpetclinicj8.model.Vet;
 import com.kt.sfgpetclinicj8.services.OwnerService;
+import com.kt.sfgpetclinicj8.services.PetTypeService;
 import com.kt.sfgpetclinicj8.services.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -15,16 +17,28 @@ public class DataLoader implements CommandLineRunner {
 
     private final OwnerService ownerService;
     private final VetService vetService;
+    private final PetTypeService petTypeService;
 
     //@Autowired  //after spring 4.2 no needed on constructors
     public DataLoader(OwnerService ownerService,
-                      VetService vetService) {
+                      VetService vetService,
+                      PetTypeService petTypeService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
+        this.petTypeService = petTypeService;
     }
 
     @Override
     public void run(String... args) throws Exception {
+
+        PetType dog = new PetType();
+        dog.setName("Dog");
+        PetType savedDogPetType = petTypeService.save(dog);
+        PetType cat = new PetType();
+        dog.setName("Cat");
+        PetType savedCatPetType = petTypeService.save(cat);
+
+        System.out.println("Loaded PetTypes....");
 
         Owner owner1 = new Owner();
         owner1.setFirstName("Michael");
