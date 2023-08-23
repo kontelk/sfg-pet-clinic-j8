@@ -14,6 +14,11 @@ public class IndexController {
         return "index";
     }
 
+    @RequestMapping({"oups"})
+    public String oupsHandler() {
+        return "notimplemented";
+    }
+
     @RequestMapping({"help"})
     public String help() {
         return "help";
