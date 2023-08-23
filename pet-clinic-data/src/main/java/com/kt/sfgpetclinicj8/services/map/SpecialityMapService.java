@@ -1,7 +1,7 @@
 package com.kt.sfgpetclinicj8.services.map;
 
 import com.kt.sfgpetclinicj8.model.Speciality;
-import com.kt.sfgpetclinicj8.services.SpecialtyService;
+import com.kt.sfgpetclinicj8.services.SpecialityService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -10,9 +10,9 @@ import java.util.Set;
  * Created by kontelk on 8/23/23.
  */
 @Service
-public class SpecialtyMapService
+public class SpecialityMapService
         extends AbstractMapService<Speciality, Long>
-        implements SpecialtyService {
+        implements SpecialityService {
 
     @Override
     public Set<Speciality> findAll() {
